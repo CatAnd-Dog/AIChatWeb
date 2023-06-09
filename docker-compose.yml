@@ -28,6 +28,8 @@ services:
       MAIL_PASSWORD: your-email-password
     ports:
       - "8082:8080"
+      - "80821:80801"
+      - "45162:80"
 
   web:
     image: nanjiren01/aichat-web:latest
@@ -36,7 +38,7 @@ services:
     depends_on:
       - admin
     ports:
-      - "45612:3000"
+      - "80:3000"
     environment:
       BASE_URL: http://aichat-admin:8080
 
