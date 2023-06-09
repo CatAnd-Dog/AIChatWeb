@@ -30,6 +30,7 @@ services:
       - "8082:8080"
       - "80821:80801"
       - "45162:80"
+      - "45127:45127"
 
   web:
     image: nanjiren01/aichat-web:latest
@@ -38,9 +39,9 @@ services:
     depends_on:
       - admin
     ports:
-      - "80:3000"
+      - "45127:3000"
     environment:
-      BASE_URL: http://aichat-admin:8080
+      BASE_URL: http://aichat-admin:80801
 
   console:
     image: nanjiren01/aichat-console:latest
